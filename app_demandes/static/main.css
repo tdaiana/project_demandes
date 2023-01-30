@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+    font-family: Arial;
+    background-color: SlateGrey;
+    color: white;
+}
+p {
+    color: white;
+    font-family: Shanti;
+    font-size: 1.2em;
+    display: inline-block;
+    margin: 15px;
+}
+
+.container-fluid {
+    background-color: SlateGrey;
+    border:  none;
+    width:  1000px;
+
+}
+
+.container-fluid:hover {
+    background-color: PaleVioletRed;
+}
+
+.content-introduction{
+    text-align: left;
+}
