@@ -30,7 +30,7 @@ numexpr==2.8.4
 numpy==1.21.4
 orca==1.8
 packaging==22.0
-pandas==1.5.2
+pandas==1.3.5
 patsy==0.5.3
 Pillow==9.4.0
 plotly==5.13.0
