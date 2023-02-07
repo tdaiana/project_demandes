@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block content %}
+
+<div class = "content-section">
+<h3> Formulaire de prévisions du taux salarial</h3>
+<img src="{{ href }}" height=600 />
+<body>
+<form action={{url_for('form_projet_input')}} method="POST" novalidate>
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.Annee.label }} <br />
+    {{ form.Annee(size=1) }}
+
+   </p>
+  <p>
+    {{ form.region.label }}<br />
+    {{ form.region(size=1) }}
+  </p>
+  <p>
+    {{ form.groupe.label }}<br />
+    {{ form.groupe(size=1) }}
+  </p>
+  <p>
+    {{ form.genre.label }}<br />
+    {% for subfield in form.genre %}
+      {{ subfield }}
+      {{ subfield.label }}
+    {% endfor %}
+  </p>
+  <p>
+    {{ form.type_emploi.label }}<br />
+    {{ form.type_emploi(size=1) }}
+  </p>
+  <p>
+    {{ form.profession.label }}<br />
+    {{ form.profession(size=1) }}
+  </p>
+
+  <hr>
+  <p>{{ form.submit() }}</p>
+</form>
+<p style="text-align: center;">{{ output }}</p>
+
+</body>
+</div>
+{% endblock %}
+

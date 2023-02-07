@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+
+    {% extends "base.html" %}
+    {% block content %}
+    <h1> {{mod.titre}}</h1>
+    <!-- As a link -->
+    <div class = "content-introduction">
+    <p>
+        <br>   Le projet entre dans le cadre de développement d’une application permettant l’exploitation d’information sur le salaire et la disparité salariale selon le genre.</p>
+        <br>   L’application affiche un formulaire pour compléter les paramètres suivants : </br>
+        <ul>
+            <li>Type d’emploi;</li>
+            <li>Classification nationale des professions (CNP4);</li>
+            <li>Sexe;</li>
+            <li>Région;</li>
+            <li>Groupe d’âge.</li>
+        </ul>
+    </p>
+    </div>
+
+    {% endblock %}
+
+</body>
+</html>
