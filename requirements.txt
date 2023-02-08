@@ -1,5 +1,5 @@
 api==0.0.7
-blosc2==2.0.0
+blosc2==0.3.0
 certifi==2022.12.7
 charset-normalizer==3.0.1
 click==8.1.3
