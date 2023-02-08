@@ -118,8 +118,8 @@ def make_picture(salaire_employe_, _model, scaler, region, cnp, grp_age, genr_em
     prediction_train = np.round(np.exp(prediction_train), decimals=2)
     salaire_employe_["Prediction"] = prediction_train
 
-    filtre_ = (salaire_employe_["Regions"] == region) & (salaire_employe_["CNP"] == cnp) & (
-            salaire_employe_["Groupe d'âge"] == grp_age) & (salaire_employe_["Genre de travail"] == genr_emp)
+    filtre_ = (salaire_employe_["Regions"] == region) & (salaire_employe_["CNP"] == cnp)
+    # & (salaire_employe_["Groupe d'âge"] == grp_age) & (salaire_employe_["Genre de travail"] == genr_emp)
 
     fig = px.scatter(salaire_employe_[filtre_], x=salaire_employe_[filtre_]["Salaire horaire moyen"],
                      y=salaire_employe_[filtre_]["Prediction"],
@@ -155,6 +155,6 @@ def make_picture(salaire_employe_, _model, scaler, region, cnp, grp_age, genr_em
 
                       xaxis_rangeslider_visible=True)
 
-    fig.write_image(output_file, format='svg', engine='kaleido', height=400, width=700)
+    fig.write_image(output_file, format='svg', engine='kaleido', height=350, width=650)
     salaire_employe_.drop(columns=['Prediction'], axis=1, inplace=True)
     fig.show()
