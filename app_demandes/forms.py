@@ -6,8 +6,8 @@ from wtforms.validators import DataRequired, InputRequired
 
 class SalaireForm(FlaskForm):
     Annee_choix = ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011',
-                   '2012','2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021',
-                   '2022','2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031']
+                   '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021',
+                   '2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031']
     Annee = SelectField('Année', choices=Annee_choix, validators=[DataRequired()])
     profession_choix = ["Affaires, finance et administration [1]",
                         "Arts, culture, sports et loisirs [5]",
@@ -71,9 +71,8 @@ class SalaireForm(FlaskForm):
     type_choix = ["Employés à temps partiel", "Employés à temps plein"]
     type_emploi = SelectField("Type d'emploi", choices=type_choix, validators=[DataRequired()])
 
-    region_choix: list[str] = ['Québec', 'Ontario', 'Colombie-Britannique', 'Manitoba', 'Alberta', 'Saskatchewan',
-                               'Nouvelle-Écosse', 'Nouveau-Brunswick', 'Terre-Neuve-et-Labrador',
-                               'Île-du-Prince-Édouard']
+    region_choix = ['Québec', 'Ontario', 'Colombie-Britannique', 'Manitoba', 'Alberta', 'Saskatchewan',
+                    'Nouvelle-Écosse', 'Nouveau-Brunswick', 'Terre-Neuve-et-Labrador', 'Île-du-Prince-Édouard']
     region = SelectField('Région', choices=region_choix, validators=[DataRequired()])
 
     submit = SubmitField("Prédire")
