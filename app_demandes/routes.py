@@ -15,6 +15,8 @@ from app_demandes.forms import SalaireForm
 from flask import render_template, request, session, redirect, url_for
 from flask import flash
 
+pio.kaleido.scope.chromium_args += ("--single-process", "--disable-gpu", "--headless", "--no-sandbox",)
+pio.kaleido.scope.mathjax = None
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'svg'])
 # for save image on static
 file_ = r"C:\Users\daian\anaconda3\envs\salaire\Lib\site-packages\plotly\package_data\plotly.min.js"
