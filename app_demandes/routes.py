@@ -155,6 +155,7 @@ def make_picture(salaire_employe_, _model, scaler, region, cnp, grp_age, genr_em
 
                       xaxis_rangeslider_visible=True)
 
-    fig.write_image(output_file, format='svg', engine='kaleido', height=350, width=650)
+    #fig.write_image(output_file, format='svg', engine='kaleido', height=350, width=650)
+    pio.write_image(fig,output_file, format='svg', engine='kaleido', height=350, width=650)
     salaire_employe_.drop(columns=['Prediction'], axis=1, inplace=True)
     fig.show()
