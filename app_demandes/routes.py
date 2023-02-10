@@ -1,6 +1,6 @@
 # python library
 import dill as pickle
-import seaborn as sns
+# import seaborn as sns
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -45,13 +45,6 @@ def form_projet_input():
         scaler = pickle.load(open("app_demandes/scaler.pkl", 'rb'))
         explainer = pickle.load(open("app_demandes/explainer.pkl", 'rb'))
         salaire_employe_ = pickle.load(open("app_demandes/salaire_employe_train.pkl", 'rb'))
-
-        # annee = projet_form.Annee.data
-        # region = projet_form.region.data
-        # profession = projet_form.profession.data
-        # genre = projet_form.genre.data
-        # groupe = projet_form.groupe.data
-        # type_emploi = projet_form.type_emploi.data
 
         test_input = [[projet_form.Annee.data, projet_form.region.data, projet_form.profession.data,
                        projet_form.genre.data, projet_form.groupe.data, projet_form.type_emploi.data]]
@@ -100,9 +93,9 @@ def make_picture(salaire_employe_, _model, scaler, region, cnp, grp_age, genr_em
                  output_file):
     # visualisation
 
-    sns.set_style('ticks')
-    sns.set_context("notebook")
-    sns.color_palette("hls", 8)
+    # sns.set_style('ticks')
+    # sns.set_context("notebook")
+    # sns.color_palette("hls", 8)
     x_train = salaire_employe_.drop(["Salaire horaire moyen"], axis=1)
     y_train = salaire_employe_["Salaire horaire moyen"]
 
@@ -155,7 +148,7 @@ def make_picture(salaire_employe_, _model, scaler, region, cnp, grp_age, genr_em
 
                       xaxis_rangeslider_visible=True)
 
-    #fig.write_image(output_file, format='svg', engine='kaleido', height=350, width=650)
-    pio.write_image(fig,output_file, format='svg', engine='kaleido', height=350, width=650)
+    # fig.write_image(output_file, format='svg', engine='kaleido', height=350, width=650)
+    pio.write_image(fig, output_file, format='svg', engine='kaleido', height=350, width=650)
     salaire_employe_.drop(columns=['Prediction'], axis=1, inplace=True)
     fig.show()
